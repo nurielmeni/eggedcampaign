@@ -1,0 +1,240 @@
+html,
+body {
+    height: 100%;
+    font-family: 'Assistant', sans-serif;
+}
+
+.wrap {
+    min-height: 100%;
+    height: auto;
+    margin: 0 auto -60px;
+    padding: 0 0 60px;
+}
+
+.wrap > .container {
+    padding: 70px 15px 20px;
+}
+
+.footer {
+    height: 60px;
+    background-color: #f5f5f5;
+    border-top: 1px solid #ddd;
+    padding-top: 20px;
+}
+
+.jumbotron {
+    text-align: center;
+    background-color: transparent;
+}
+
+.jumbotron .btn {
+    font-size: 21px;
+    padding: 14px 24px;
+}
+
+.not-set {
+    color: #c55;
+    font-style: italic;
+}
+
+/* add sorting icons to gridview sort links */
+a.asc:after, a.desc:after {
+    position: relative;
+    top: 1px;
+    display: inline-block;
+    font-family: 'Glyphicons Halflings';
+    font-style: normal;
+    font-weight: normal;
+    line-height: 1;
+    padding-left: 5px;
+}
+
+a.asc:after {
+    content: /*"\e113"*/ "\e151";
+}
+
+a.desc:after {
+    content: /*"\e114"*/ "\e152";
+}
+
+.sort-numerical a.asc:after {
+    content: "\e153";
+}
+
+.sort-numerical a.desc:after {
+    content: "\e154";
+}
+
+.sort-ordinal a.asc:after {
+    content: "\e155";
+}
+
+.sort-ordinal a.desc:after {
+    content: "\e156";
+}
+
+.grid-view th {
+    white-space: nowrap;
+}
+
+.hint-block {
+    display: block;
+    margin-top: 5px;
+    color: #999;
+}
+
+.error-summary {
+    color: #a94442;
+    background: #fdf7f7;
+    border-left: 3px solid #eed3d7;
+    padding: 10px 20px;
+    margin: 0 0 15px 0;
+}
+
+/* align the logout "link" (button in form) of the navbar */
+.nav li > form > button.logout {
+    padding: 15px;
+    border: none;
+}
+
+.flex {
+    display: flex;
+}
+
+.flex.flex-r {
+    flex-direction: row;
+}
+
+.flex.flex-rr {
+    flex-direction: row-reverse;
+}
+
+.flex.flex-c {
+    flex-direction: column;
+}
+
+.flex.flex-cr {
+    flex-direction: column-reverse;
+}
+
+.flex.flex-ww {
+    flex-wrap: wrap;
+}
+
+.flex.flex-wn {
+    flex-wrap: nowrap;
+}
+
+.flex.flex-wr {
+    flex-wrap: wrap-reverse;
+}
+
+.flex.center {
+    justify-content: center;
+}
+
+.flex.space-between {
+    justify-content: space-between;
+}
+
+.flex.space-around {
+    justify-content: space-around;
+}
+
+.flex.middle {
+    vertical-align: middle;
+}
+
+.flex.top {
+    vertical-align: top;
+}
+
+.flex.bottom {
+    vertical-align: bottom;
+}
+
+
+
+
+
+
+
+.h-100 {
+    height: 100%;
+}
+
+.campain-wrap,
+.campain-wrap > .row {
+    min-height: 100%;
+}
+
+.campain-wrap .egged-form,
+.campain-wrap .egged-image {
+    height: auto;
+    min-height: 100%;
+}
+
+.campain-wrap .egged-form {
+    width: 28%;
+    padding: 15px;
+    background-color: #00a77a;
+}
+
+.campain-wrap .egged-image {
+    width: 67%;
+    background-color: #dcddde;
+}
+
+#contact-form input[type="file"] {
+    display: none;
+}
+
+.nav > li > form > button.logout:focus,
+.nav > li > form > button.logout:hover {
+    text-decoration: none;
+}
+
+.nav > li > form > button.logout:focus {
+    outline: none;
+}
+
+.dir-ltr {
+    direction: ltr;
+}
+
+.dir-rtl {
+    direction: rtl;
+}
+
+.ql-toolbar {
+    display: flex;
+    flex-direction: row-reverse;
+    direction: ltr;
+}
+.ql-editor {
+  direction: rtl;
+  text-align: right;
+}
+.ql-container {
+    min-height: 130px;
+}
+
+@media(max-width:767px) {
+    .nav li > form > button.logout {
+        display:block;
+        text-align: left;
+        width: 100%;
+        padding: 10px 15px;
+    }
+}
+
+@media(min-width:768px) {
+    .campain-wrap {
+        height: 100vh;
+        width: 100vw;
+    }
+    
+    .campain-wrap > .row > div {
+        min-height: 100vh;
+    }
+}
