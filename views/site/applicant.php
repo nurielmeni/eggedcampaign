@@ -48,20 +48,22 @@ use yii\helpers\Json;
         ])
         ->label(false) ?>
         
-        <div class="form-group attach-file text-left">
-            <button class="form-control btn-clear"><label for="<?= 'file' . $id ?>"><i class="glyphicon glyphicon-paperclip" style="margin-left: 10px;"></i><?= $model->getAttributeLabel('cvfile') ?></label></button>
-            <div class="hidden">
-                <?= $form->field($model, "cvfile[$id]", ['errorOptions' => ['id' => "help-cvfile$id"]], ['options' => ['class' => 'attach-file text-left', 'style' => (isset($del) && $del ? 'padding-left: 0;' : 'padding-left: 10px;') . 'max-width: 130px;', 'aria-label' => $model->getAttributeLabel('cvfile')]])
-                ->fileInput([
-                    'id' => 'file' . $id,
-                    'autofocus' => 'autofocus',
-                    'aria-describedby' => "help-cvfile$id",
-                    'accept' => '.pdf,.rtf,.doc,.docx,.xml,application/msword,application/vnd.openxmlformats-officedocument.wordprocessingml.document'
-                ])
-                ->label(false) ?>
+        <?php if ($campain->show_cv === 1) : ?>
+            <div class="form-group attach-file text-left">
+                <button class="form-control btn-clear"><label for="<?= 'file' . $id ?>"><i class="glyphicon glyphicon-paperclip" style="margin-left: 10px;"></i><?= $model->getAttributeLabel('cvfile') ?></label></button>
+                <div class="hidden">
+                    <?= $form->field($model, "cvfile[$id]", ['errorOptions' => ['id' => "help-cvfile$id"]], ['options' => ['class' => 'attach-file text-left', 'style' => (isset($del) && $del ? 'padding-left: 0;' : 'padding-left: 10px;') . 'max-width: 130px;', 'aria-label' => $model->getAttributeLabel('cvfile')]])
+                    ->fileInput([
+                        'id' => 'file' . $id,
+                        'autofocus' => 'autofocus',
+                        'aria-describedby' => "help-cvfile$id",
+                        'accept' => '.pdf,.rtf,.doc,.docx,.xml,application/msword,application/vnd.openxmlformats-officedocument.wordprocessingml.document'
+                    ])
+                    ->label(false) ?>
+                </div>
             </div>
-            
-        </div>
+        <?php endif; ?>
+
         <?= isset($del) && $del ? Html::tag(
                 'button', 
                 '', 

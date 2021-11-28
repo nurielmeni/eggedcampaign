@@ -2,7 +2,7 @@
 
 return [
     'class' => 'yii\db\Connection',
-    'dsn' => 'mysql:host=localhost;dbname=eggedcampaign',
+    'dsn' => 'mysql:host=db;dbname=eggedcampaign',
     'username' => 'eggedcampaign',
     'password' => 'ZDA5MDcyZmFhNmM3C',
     'charset' => 'utf8',

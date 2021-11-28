@@ -58,6 +58,24 @@ class BaseContactForm extends Model
         ];
     }
     
+    /**
+     * @return array customized attribute labels
+     */
+    public function jobsMapping()
+    {
+        return [
+            'jb-24' => ['area' => Yii::t('app', 'North'), 'licensed' => true],
+            'jb-25' => ['area' => Yii::t('app', 'South'), 'licensed' => true],
+            'jb-26' => ['area' => Yii::t('app', 'Jerusalem'), 'licensed' => true],
+            'jb-27' => ['area' => Yii::t('app', 'North'), 'licensed' => false],
+            'jb-28' => ['area' => Yii::t('app', 'South'), 'licensed' => false],
+            'jb-29' => ['area' => Yii::t('app', 'Jerusalem'), 'licensed' => false],
+            'jb-30' => ['area' => Yii::t('app', ''), 'licensed' => false],
+            'jb-31' => ['area' => Yii::t('app', ''), 'licensed' => false],
+            'jb-32' => ['area' => Yii::t('app', ''), 'licensed' => false],
+        ];
+    }
+
     public function getSearchAreaOptions() {
         return [
             //Yii::t('app', 'Center') => Yii::t('app', 'Center'),

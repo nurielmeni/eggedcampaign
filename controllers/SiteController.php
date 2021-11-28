@@ -126,7 +126,9 @@ class SiteController extends Controller
      */
     public function actionContact($id)
     {
+        $request = Yii::$app->request;
         $campain = Campain::findOne($id);
+        $jobCode = $request->get('jobcode');
         
         
         if ($campain === null) {
@@ -155,6 +157,9 @@ class SiteController extends Controller
             }
         }
         
+        if ($jobCode) {
+            $model->searchArea = $model->jobsMapping()[$jobCode]['area'];
+        }
         if ($campain->fbf === 0) {
             return $this->render('contact', [
                 'campain' => $campain,
