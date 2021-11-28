@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+    <fromMail>egged@cvwebmail.com</fromMail>
+    <toMail>egged@cvwebmail.com</toMail>
+    <fromName>Egged CV WebMail</fromName>
+    <nsoftSiteId>9ac3c552-bca9-47ca-9892-9f11a01acf2f</nsoftSiteId>
+    <nsoftApplicationId>9ac3c552-bca9-47ca-9892-9f11a01acf2f</nsoftApplicationId>
+    <categorySupplierId>528e3917-7e8d-436d-9eb3-46570a63a42d</categorySupplierId>
+    <nlsCardsWsdlUrl>https://huntercards.hunterhrms.com/HunterCards.svc?wsdl</nlsCardsWsdlUrl>
+    <nlsSecurityWsdlUrl>https://hunterdirectory.hunterhrms.com/SecurityService.svc?wsdl</nlsSecurityWsdlUrl>
+    <nlsDirectoryWsdlUrl>https://hunterdirectory.hunterhrms.com/DirectoryManagementService.svc?wsdl</nlsDirectoryWsdlUrl>
+    <nlsSecurityDomain>egged-mate</nlsSecurityDomain>
+    <nlsSecurityUsername>fbf</nlsSecurityUsername>
+    <nlsSecurityPassword>pass2021</nlsSecurityPassword>
+    <searchServiceWsdlUrl>https://huntercards.hunterhrms.com/HunterCards.svc?wsdl</searchServiceWsdlUrl>
+    <languageCode>1037</languageCode>
+    <categoryIDs/>
+    <trace>1</trace>
+    <exceptions>1</exceptions>
+    <cacheWsdl>3</cacheWsdl>
+    <siteAddress>https://www.egged.co.il/HomePage.aspx</siteAddress>
+</root>

@@ -44,7 +44,7 @@ return [
     'No' => 'לא',
     'Phone' => 'טלפון נייד',
     'Licanse' => 'בעל רשיון נהיגה לאוטובוס?',
-    'Search Area' => 'אזור עבודה מבוקש',
+    'Search Area' => 'משרה מבוקשת',
     'The above error occurred while the Web server was processing your request.' => 'השגיאה למעלה התרחשה בזמן ביצוע הבקשה',
     'Please contact us if you think this is a server error. Thank you.' => 'צור עימנו קשר במידה ואתה חושב שזו שגיאת שרת, תודה',
     'Not Found (#404)' => 'לא נמצא (#404)',

@@ -3,8 +3,12 @@
 namespace app\models;
 
 use Yii;
+use app\components\Niloos;
 use yii\base\Model;
 use kartik\mpdf\Pdf;
+use app\models\Search;
+use Mpdf\Shaper\Sea;
+use yii\helpers\ArrayHelper;
 
 /**
  * ContactForm is the model behind the contact form.
@@ -77,13 +81,9 @@ class BaseContactForm extends Model
     }
 
     public function getSearchAreaOptions() {
-        return [
-            //Yii::t('app', 'Center') => Yii::t('app', 'Center'),
-            Yii::t('app', 'Jerusalem') => Yii::t('app', 'Jerusalem'),
-            Yii::t('app', 'South') => Yii::t('app', 'South'),
-            Yii::t('app', 'North') => Yii::t('app', 'North'),
-            //Yii::t('app', 'East') => Yii::t('app', 'East'),
-        ];
+        $search = new Search('528e3917-7e8d-436d-9eb3-46570a63a42d');
+        $jobs = $search->jobs();
+        return ArrayHelper::map($jobs, 'JobCode', 'JobTitle');
     }
 
     public function getYesnoOptions() {
@@ -221,5 +221,4 @@ class BaseContactForm extends Model
         }    
         return $jobCode;
     }
-
 }

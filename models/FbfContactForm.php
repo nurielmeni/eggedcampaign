@@ -13,7 +13,12 @@ class FbfContactForm extends BaseContactForm
     public $myName;
     public $myNumber;
     
-        /**
+    public function __construct($sid = null)
+    {
+        $this->supplierId = $sid ?: Yii::$app->params['supplierIdFbf'];
+    }
+
+    /**
      * @return array the validation rules.
      */
     public function rules()

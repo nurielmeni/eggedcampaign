@@ -14,6 +14,11 @@ class ContactForm extends BaseContactForm
 {
     public $licanse;
     
+    public function __construct($sid = null)
+    {
+        $this->supplierId = $sid ?: Yii::$app->params['supplierId'];
+    }
+
     /**
      * @return array the validation rules.
      */
