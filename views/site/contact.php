@@ -9,6 +9,7 @@ use yii\bootstrap\ActiveForm;
 use yii\helpers\Url;
 
 $this->title = $campain->name;
+$session = Yii::$app->session;
 ?>
 
 <style>   
@@ -34,24 +35,47 @@ $this->title = $campain->name;
 </style>
 
 <?php if (Yii::$app->session->hasFlash('contactFormSubmitted')): ?>
-<div class="reply-wrapper bg-green hv-100 flex flex-c center">
-    <div class="container">
-        <div class="row-fluid">
-            <div role="alert" class="alert alert-success egged-title col-xs-12 col-sm-10 col-sm-offset-1 col-md-8 col-md-offset-2">
-                <h1><?= Yii::t('app', 'Thank you for your request! we will contact you soon') ?></h1>
-                <h2>אגד מחלקת הגיוס</h2>
+    
+    <div class="reply-wrapper bg-green hv-100 flex flex-c center">
+        <div class="container">
+            <div class="row-fluid">
+                <div role="alert" class="alert alert-success egged-title col-xs-12 col-sm-10 col-sm-offset-1 col-md-8 col-md-offset-2">
+                    <h1><?= Yii::t('app', 'Thank you for your request! we will contact you soon') ?></h1>
+                    <h2>אגד מחלקת הגיוס</h2>
+                </div>
+            </div>
+
+            <div class="row">
+                <p class="col-xs-12 col-sm-10 col-sm-offset-1 col-md-8 col-md-offset-2">  
+                    <button class="btn btn-info bg-yellow">
+                        <?= Html::a('חזור', Url::to('@web/' . $campain->id)) ?>
+                    </button>
+                </p>
             </div>
         </div>
+    </div>
 
-        <div class="row">
-            <p class="col-xs-12 col-sm-10 col-sm-offset-1 col-md-8 col-md-offset-2">            
-                <button class="btn btn-info bg-yellow">
-                    <?= Html::a('חזור', Url::to('@web/' . $campain->id)) ?>
-                </button>
-            </p>
+<?php elseif (Yii::$app->session->hasFlash('contactFormSubmitError')): ?>
+
+    <div class="reply-wrapper bg-green hv-100 flex flex-c center">
+        <div class="container">
+            <div class="row-fluid">
+                <div role="alert" class="alert alert-error egged-title col-xs-12 col-sm-10 col-sm-offset-1 col-md-8 col-md-offset-2">
+                    <h1><?= Yii::t('app', 'We could not send your application. Please try later.') ?></h1>
+                    <h2>אגד מחלקת הגיוס</h2>
+                </div>
+            </div>
+
+            <div class="row">
+                <p class="col-xs-12 col-sm-10 col-sm-offset-1 col-md-8 col-md-offset-2">            
+                    <button class="btn btn-info bg-yellow">
+                        <?= Html::a('חזור', Url::to('@web/' . $campain->id)) ?>
+                    </button>
+                </p>
+            </div>
         </div>
     </div>
-</div>
+
 <?php else: ?>
 
 

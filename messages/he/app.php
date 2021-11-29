@@ -79,4 +79,5 @@ return [
     'Increase Font' => 'הגדל טקסט',
     'Decrease Font' => 'הקטן טקסט',
     'Contact Text' => 'טקסט יצירת קשר',
+    'We could not send your application. Please try later.' => 'התרחשה שגיאה בשליחת הפרטים.',
 ];

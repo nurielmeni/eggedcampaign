@@ -191,6 +191,7 @@ class SiteController extends Controller
         $modelFbf = new FbfContactForm();
         if ($modelFbf->load(Yii::$app->request->post())) {
             if (is_array($modelFbf->name)) {
+                $sent = false;
                 for ($i = 0; $i < count($modelFbf->name); $i++) {
                     $model = $this->contactModel($modelFbf, $i);
                     if (!$model->validate()) continue;
@@ -203,8 +204,10 @@ class SiteController extends Controller
                 
                 if ($sent) {
                     Yii::$app->session->setFlash('contactFormSubmitted');
-                    return $this->refresh();
+                } else {
+                    Yii::$app->session->setFlash('contactFormSubmitError');
                 }
+                return $this->refresh();
             }
         }
         
