@@ -35,3 +35,6 @@ tests/_support/_generated
 
 /runtime/**
 /web/assetes/**
+
+# DB
+config/db.php
