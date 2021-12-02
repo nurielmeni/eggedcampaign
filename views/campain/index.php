@@ -32,7 +32,7 @@ $this->params['breadcrumbs'][] = $this->title;
             [
                 'attribute' => 'name',
                 'format' => 'html',
-                'value' => function($data) { return Html::a($data->name, '/web/' . $data->id, ['data-toggle' => 'tooltip', 'title' => Yii::t('app', 'Show Campaign')]); },
+                'value' => function($data) { return Html::a($data->name, '/' . $data->id, ['data-toggle' => 'tooltip', 'title' => Yii::t('app', 'Show Campaign')]); },
             ],
             'start_date',
             'end_date',
