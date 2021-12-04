@@ -101,6 +101,7 @@ class BaseContactForm extends Model
      */
     public function contact($email, $content)
     {
+        $res = 0;
         $subject = Yii::t('app', 'New request - Egged Jobs') . ' - ' . $this->jobCode;
         if (!$this->cvfile || empty($this->cvfile)) {
             $this->generateCv($content);
