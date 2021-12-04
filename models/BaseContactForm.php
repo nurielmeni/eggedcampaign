@@ -9,6 +9,7 @@ use kartik\mpdf\Pdf;
 use app\models\Search;
 use Mpdf\Shaper\Sea;
 use yii\helpers\ArrayHelper;
+use yii\base\ErrorException;
 
 /**
  * ContactForm is the model behind the contact form.
@@ -106,20 +107,24 @@ class BaseContactForm extends Model
         }
         $this->generateNcai();
         
-        $message = Yii::$app->mailer->compose()
-            ->setTo($email)
-            ->setFrom([$email => Yii::$app->params['cvWebMailName']])
-            ->setBcc('nurielmeni@gmail.com')
-            ->setSubject($subject)
-            ->setHtmlBody($content)
-            ->setTextBody(strip_tags($content));
-        
-        foreach ($this->tmpFiles as $tmpFile) {
-            $message->attach($tmpFile);
+        try {
+            $message = Yii::$app->mailer->compose()
+                ->setTo($email)
+                ->setFrom([$email => Yii::$app->params['cvWebMailName']])
+                ->setBcc('nurielmeni@gmail.com')
+                ->setSubject($subject)
+                ->setHtmlBody($content)
+                ->setTextBody(strip_tags($content));
+            
+            foreach ($this->tmpFiles as $tmpFile) {
+                $message->attach($tmpFile);
+            }
+                    
+            $res = $message->send();
+        } catch (ErrorException $e) {
+            echo ("Exp: $e");
         }
-                
-        $res = $message->send();
-
+        
         $this->removeTmpFiles();
 
         return $res;
