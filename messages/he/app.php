@@ -53,7 +53,7 @@ return [
     'A campaign with this ID could not be found' => 'לא ניתן למצוא קמפיין עם המזהה שהוזן',
     'Thank you for your request! we will contact you soon' => 'תודה על פנייתך! ניצור איתך קשר בהקדם.',
     'Job Application - Egged' => 'אגד - הגשת מועמדות למשרה',
-    'Attach CV file (Not Mandatory)' => 'צרף קובץ קורות חיים (לא חובה)',
+    'Attach CV file (Not Mandatory)' => 'צרף קובץ קורות חיים',
     'Please fill out the following fields to login:' => 'מלא בבקשה את פרטים כדי להיכנס:',
     'Username' => 'שם משתמש',
     'Password' => 'סיסמה',
