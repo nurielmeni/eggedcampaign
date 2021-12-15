@@ -16,7 +16,7 @@ use yii\web\UploadedFile;
 class SiteController extends Controller
 {
     public $defaultAction = 'contact';
-    
+
     /**
      * {@inheritdoc}
      */
@@ -128,13 +128,13 @@ class SiteController extends Controller
     {
         $request = Yii::$app->request;
         $campain = Campain::findOne($id);
-        $jobCode = $request->get('jobcode');
-        
-        
+        $jobCode = $request->get('jobCode');
+
+
         if ($campain === null) {
             throw new \yii\web\NotFoundHttpException(Yii::t('app', 'A campaign with this ID could not be found'));
         }
-        
+
         $now = time();
         if ($campain->start_date_int > $now || (isset($campain->end_date_int) && $campain->end_date_int < $now)) {
             throw new \yii\web\NotFoundHttpException(Yii::t('app', 'The campaign is not active!'));
@@ -148,7 +148,7 @@ class SiteController extends Controller
             $model =  new FbfContactForm();
             $model->supplierId = Yii::$app->request->get('sid', (empty($campain->sid) ? Yii::$app->params['supplierIdFbf'] : $campain->sid));
         }
-        
+
         if ($model->load(Yii::$app->request->post()) && $model->validate()) {
             $model->cvfile = UploadedFile::getInstance($model, 'cvfile');
             if ($model->cvfile) $model->upload();
@@ -156,10 +156,11 @@ class SiteController extends Controller
                 Yii::$app->session->setFlash('contactFormSubmitted');
             }
         }
-        
-        if ($jobCode) {
-            $model->searchArea = $model->jobsMapping()[$jobCode]['area'];
+
+        if ($jobCode && preg_match('/^JB-[0-9]+$/', $jobCode)) {
+            $model->searchArea[0] = $jobCode;
         }
+
         if ($campain->fbf === 0) {
             return $this->render('contact', [
                 'campain' => $campain,
@@ -172,7 +173,7 @@ class SiteController extends Controller
             ]);
         }
     }
-    
+
     /**
      * Displays contact page.
      *
@@ -181,13 +182,13 @@ class SiteController extends Controller
     public function actionContactFbf($id)
     {
         $campain = Campain::findOne($id);
-        
-        
+
+
         if ($campain === null) {
             throw new \yii\web\NotFoundHttpException(Yii::t('app', 'A campaign with this ID could not be found'));
         }
-        
-        
+
+
         $modelFbf = new FbfContactForm();
         if ($modelFbf->load(Yii::$app->request->post())) {
             if (is_array($modelFbf->name)) {
@@ -201,7 +202,7 @@ class SiteController extends Controller
                         $sent = true;
                     }
                 }
-                
+
                 if ($sent) {
                     Yii::$app->session->setFlash('contactFormSubmitted');
                 } else {
@@ -210,22 +211,24 @@ class SiteController extends Controller
                 return $this->refresh();
             }
         }
-        
+
         return $this->render('contactFbf', [
             'campain' => $campain,
             'model' => $modelFbf,
         ]);
     }
-    
-    private function contactModel($modelFbf, $i) {
+
+    private function contactModel($modelFbf, $i)
+    {
         $model = new FbfContactForm();
         foreach ($model->attributes as $attribute => $value) {
             $model->$attribute = is_array($modelFbf->attributes[$attribute]) ? $modelFbf->attributes[$attribute][$i] : $modelFbf->attributes[$attribute];
         }
         return $model;
     }
-    
-    public function actionApplicant() {
+
+    public function actionApplicant()
+    {
         $request = Yii::$app->request;
         $id = $request->post('id', '');
         $del = $request->post('del', false);
