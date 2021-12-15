@@ -72,6 +72,25 @@ $config = [
             ],
         ],
     ],
+    'modules' => [
+        'params' => [
+            'class' => 'fgh151\modules\params\Module',
+            'paramsFilePath' => [
+                'Common params' => '@app/config/params.php',
+                'Backend Params' => '@app/config/params.php',
+                'Frontend Params' => '@app/config/params.php',
+            ],
+            'as access' => [
+                'class' => 'yii\filters\AccessControl',
+                'rules' => [
+                    [
+                        'allow' => true,
+                        'roles' => ['@'],
+                    ]
+                ]
+            ]
+        ]
+    ],
     'params' => $params,
 ];
 

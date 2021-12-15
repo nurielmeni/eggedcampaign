@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "2a11b2f25307feffdc234db5d10563fb",
+    "content-hash": "484a25958cf7f56676514a4755b89641",
     "packages": [
         {
             "name": "airani/yii2-bootstrap-rtl",
@@ -472,6 +472,57 @@
                 "source": "https://github.com/ezyang/htmlpurifier/tree/master"
             },
             "time": "2020-06-29T00:56:53+00:00"
+        },
+        {
+            "name": "fgh151/yii2-params",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/fgh151/yii2-params.git",
+                "reference": "a26eccb4b0ade409dab8daccd767c9438b1cd44c"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/fgh151/yii2-params/zipball/a26eccb4b0ade409dab8daccd767c9438b1cd44c",
+                "reference": "a26eccb4b0ade409dab8daccd767c9438b1cd44c",
+                "shasum": ""
+            },
+            "require": {
+                "yiisoft/yii2": "^2.0.2",
+                "yiisoft/yii2-bootstrap": "~2.0"
+            },
+            "default-branch": true,
+            "type": "yii2-extension",
+            "autoload": {
+                "psr-4": {
+                    "fgh151\\modules\\params\\": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "GPL"
+            ],
+            "authors": [
+                {
+                    "name": "Fedor B Gorsky",
+                    "email": "fedor@support-pc.org"
+                },
+                {
+                    "name": "Evgenii Dudal",
+                    "email": "wolfstrace@gmail.com"
+                }
+            ],
+            "description": "Yii2 params files managment",
+            "homepage": "http://openitstudio.ru",
+            "keywords": [
+                "params",
+                "yii2"
+            ],
+            "support": {
+                "issues": "https://github.com/fgh151/yii2-params/issues",
+                "source": "https://github.com/fgh151/yii2-params/tree/1.0.5"
+            },
+            "time": "2017-11-09T12:32:01+00:00"
         },
         {
             "name": "kartik-v/yii2-krajee-base",

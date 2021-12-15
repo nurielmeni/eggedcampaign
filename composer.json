@@ -29,7 +29,8 @@
     "airani/yii2-bootstrap-rtl": "*",
     "kartik-v/yii2-widget-colorinput": "dev-master",
     "kartik-v/yii2-widget-switchinput": "dev-master",
-    "paragonie/random_compat": "^9.99.99"
+    "paragonie/random_compat": "^9.99.99",
+    "fgh151/yii2-params": "*"
   },
   "require-dev": {
     "yiisoft/yii2-gii": "~2.0.0"

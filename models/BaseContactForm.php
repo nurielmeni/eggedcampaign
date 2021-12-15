@@ -112,11 +112,13 @@ class BaseContactForm extends Model
             $message = Yii::$app->mailer->compose()
                 ->setTo($email)
                 ->setFrom([$email => Yii::$app->params['cvWebMailName']])
-                ->setBcc('nurielmeni@gmail.com')
                 ->setSubject($subject)
                 ->setHtmlBody($content)
                 ->setTextBody(strip_tags($content));
             
+            if (array_key_exists('bccMail', \Yii::$app->params) && !empty(\Yii::$app->params['bccMail'])) {
+                $message->setBcc(\Yii::$app->params['bccMail']);
+            }
             foreach ($this->tmpFiles as $tmpFile) {
                 $message->attach($tmpFile);
             }

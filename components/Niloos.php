@@ -37,7 +37,7 @@ class Niloos
         $this->cache = \Yii::$app->cache;
 
         // Flush cache
-        if (array_key_exists('flushCache', \Yii::$app->params) && \Yii::$app->params['flushCache']) $this->cache->flush();
+        if (array_key_exists('flushCache', \Yii::$app->params) && \Yii::$app->params['flushCache'] === 'true') $this->cache->flush();
 
         $this->loadSettings();
         $this->authenticate();
