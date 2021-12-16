@@ -152,7 +152,7 @@
             "version": "3.3.11",
             "source": {
                 "type": "git",
-                "url": "git@github.com:RobinHerbots/Inputmask.git",
+                "url": "https://github.com/RobinHerbots/Inputmask.git",
                 "reference": "5e670ad62f50c738388d4dcec78d2888505ad77b"
             },
             "dist": {
@@ -173,7 +173,7 @@
             "version": "3.2.1",
             "source": {
                 "type": "git",
-                "url": "git@github.com:jquery/jquery-dist.git",
+                "url": "https://github.com/jquery/jquery-dist.git",
                 "reference": "77d2a51d0520d2ee44173afdf4e40a9201f5964e"
             },
             "dist": {
@@ -1790,12 +1790,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/yiisoft/yii2-bootstrap.git",
-                "reference": "1e72824bf6247a917d9bc847950e8276a4700930"
+                "reference": "bdbaa9de468f480a49f12849a101fd91b755f050"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/yiisoft/yii2-bootstrap/zipball/1e72824bf6247a917d9bc847950e8276a4700930",
-                "reference": "1e72824bf6247a917d9bc847950e8276a4700930",
+                "url": "https://api.github.com/repos/yiisoft/yii2-bootstrap/zipball/bdbaa9de468f480a49f12849a101fd91b755f050",
+                "reference": "bdbaa9de468f480a49f12849a101fd91b755f050",
                 "shasum": ""
             },
             "require": {
@@ -1877,7 +1877,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2021-10-20T07:17:04+00:00"
+            "time": "2021-12-09T13:37:41+00:00"
         },
         {
             "name": "yiisoft/yii2-composer",

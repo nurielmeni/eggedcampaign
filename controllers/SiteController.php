@@ -128,6 +128,7 @@ class SiteController extends Controller
     {
         $request = Yii::$app->request;
         $campain = Campain::findOne($id);
+        Yii::$app->session->set('campain', $campain);
         $jobCode = $request->get('jobCode');
 
 
@@ -182,7 +183,7 @@ class SiteController extends Controller
     public function actionContactFbf($id)
     {
         $campain = Campain::findOne($id);
-
+        Yii::$app->session->set('campain', $campain);
 
         if ($campain === null) {
             throw new \yii\web\NotFoundHttpException(Yii::t('app', 'A campaign with this ID could not be found'));
@@ -233,10 +234,12 @@ class SiteController extends Controller
         $id = $request->post('id', '');
         $del = $request->post('del', false);
         $model = new FbfContactForm();
+        $campain = Yii::$app->session->get('campain');
         return $this->renderAjax('applicant', [
             'model' => $model,
             'id' => $id,
             'del' => $del,
+            'campain' => $campain
         ]);
     }
 }
