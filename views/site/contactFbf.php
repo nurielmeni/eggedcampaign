@@ -137,7 +137,7 @@ $this->title = $campain->name;
 
                     <div class="more-jobs col-xs-12 flex flex-r flex-wn space-between">
                         <?= Html::a(Yii::t('app', 'More Jobs'), Yii::$app->params['additionalJobs']) ?>
-                        <span class="fg-white"><?= $campain->contact ?></span>
+                        <div class="fg-white"><?= $campain->contact ?></div>
                     </div>
 
                 </div>

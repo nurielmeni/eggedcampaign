@@ -25,7 +25,7 @@ class Campain extends \yii\db\ActiveRecord
 {
     public $start_date_int;
     public $end_date_int;
-    
+
     /**
      * {@inheritdoc}
      */
@@ -47,8 +47,7 @@ class Campain extends \yii\db\ActiveRecord
             ['end_date', 'default', 'value' => null],
             [['show_licanse', 'show_cv', 'fbf'], 'integer'],
             [['name', 'sid'], 'string', 'max' => 64],
-            [['contact'], 'string', 'max' => 30],
-            [['campain', 'image', 'logo'], 'string', 'max' => 1024],
+            [['campain', 'image', 'logo', 'contact'], 'string', 'max' => 1024],
             [['button_color'], 'string', 'max' => 16],
         ];
     }
@@ -75,7 +74,8 @@ class Campain extends \yii\db\ActiveRecord
         ];
     }
 
-    public function afterFind() {
+    public function afterFind()
+    {
         parent::afterFind();
         $this->start_date_int = $this->start_date;
         $this->end_date_int = $this->end_date;
