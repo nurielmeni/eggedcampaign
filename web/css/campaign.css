@@ -270,6 +270,8 @@ button.btn-clear {
 
 .more-jobs > a {
   background-color: #ffffff;
+  max-height: 45px;
+  line-height: 39px;
 }
 
 .campain-wrap .more-jobs > * {
